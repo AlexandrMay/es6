@@ -44,3 +44,26 @@ console.log(post)
 
 //работа с обьектами
 
+const createCar = (name, model) => ({name, model})
+
+const ford = createCar('Ford', 'Focus')
+console.log(ford)
+
+const yearField = 'year'
+
+const bmw = {
+    name: 'BMW',
+    [yearField]: 2018,
+    ['model']: 'X5',
+    logFields(){
+        const {name, year, model} = this
+        console.log(name, year, model)
+    }
+}
+
+console.log(bmw)
+bmw.logFields()
+
+//const year = bmw.year
+const {year} = bmw
+console.log(year)

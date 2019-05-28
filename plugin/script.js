@@ -1,3 +1,5 @@
+const mainDiv = document.querySelector('.app')
+
 class Dropdown {
     constructor(selector, options){
         this.$el = document.querySelector(selector)
@@ -43,4 +45,12 @@ const dropDown = new Dropdown('#dropdown', {
         {label: 'Novosib', id: 'nsk'},
         {label: 'Dnipro', id: 'dp'}
     ]
+})
+
+mainDiv.addEventListener('click', event =>{
+    if(event.target.classList.contains('app')){
+        if(dropDown.$el.classList.contains('open')){
+            dropDown.close()
+        }
+    }
 })

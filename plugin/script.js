@@ -6,13 +6,13 @@ class Dropdown {
         this.items = options.items
         this.$el.querySelector('.dropdown_label').textContent = this.items[0].label
         this.$el.addEventListener('click', event =>{
-            if(event.target.classList.contains('dropdown_label')){
+          //  if(event.target.classList.contains('dropdown_label')){
                 if(this.$el.classList.contains('open')){
                     this.close()
                 } else{
                     this.open()
                 }
-            } else if(event.target.tagName.toLowerCase() === 'li'){
+             if(event.target.tagName.toLowerCase() === 'li'){
                 this.select(event.target.dataset.id)
             }
         })
